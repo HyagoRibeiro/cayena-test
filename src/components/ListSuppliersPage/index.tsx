@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useTheme } from "../../context/ThemeContext";
 import Table, { TableRow } from "../Table";
-import { api } from "../../services/api";
 import Menu from "../Menu";
+import suppliersService from "../../services/suppliersService";
 
 function ListSuppliersPage() {
-  const { theme } = useTheme();
   const [listSuppliers, setListSuppliers] = useState([]);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -14,7 +12,7 @@ function ListSuppliersPage() {
   const getSuppliers = async () => {
     try {
       setLoading(true);
-      const response = await api.get("/suppliers");
+      const response = await suppliersService.getAll();
       setListSuppliers(response.data);
       setLoading(false);
     } catch (error) {
@@ -41,7 +39,7 @@ function ListSuppliersPage() {
   return (
     <>
       <Menu />
-      <div className={`list-suppliers-page ${theme}-theme`}>
+      <div className={"list-suppliers-page"}>
         <h1>List of Suppliers Page</h1>
         <Table
           columns={columns}

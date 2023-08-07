@@ -4,6 +4,7 @@ import GenericInput from "../GenericInput";
 import { useNavigate, useParams } from "react-router-dom";
 import { api } from "../../services/api";
 import Menu from "../Menu";
+import suppliersService from "../../services/suppliersService";
 
 function SupplierDetailPage() {
   const { id } = useParams();
@@ -27,7 +28,7 @@ function SupplierDetailPage() {
   });
 
   const getSuppliers = async (supplierId: string) => {
-    const { data } = await api.get(`/suppliers/${supplierId}`);
+    const { data } = await suppliersService.getById(supplierId);
     setSupplierData(data.publicId);
     setFormData({
       name: data.name || "",
