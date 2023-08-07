@@ -48,7 +48,7 @@ describe("Menu", () => {
       </ThemeContextProvider>
     );
 
-    const logoffLink = getByText("Logoff");
+    const logoffLink = getByText("Logout");
     fireEvent.click(logoffLink);
 
     expect(removeItemMock).toHaveBeenCalledWith("tokenCayena");
