@@ -13,6 +13,21 @@
 
   }
 
+  .supplier-detail__error {
+    max-width: 600px;
+    margin: 0 auto;
+    height: 150px;
+    padding: 20px;
+    margin-top: 200px;
+    border-radius: 10px;
+    background-color: #121f3c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.5rem
+  }
+
   .supplier-detail__header {
     display: flex;
     justify-content: space-between;
