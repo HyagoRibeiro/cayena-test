@@ -16,7 +16,11 @@
     display: flex;
 
     .menu__items__link:first-child {
-      margin-right: 20px;
+      margin-right: 40px;
+      font-weight: 700;
+      width: 130px;
+      display: flex;
+      justify-content: space-between;
     }
 
     a {

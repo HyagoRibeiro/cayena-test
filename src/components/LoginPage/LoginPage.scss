@@ -6,11 +6,15 @@
     justify-content: center;
     align-items: center;
   
-    > button {
+    > .container-switch-login {
       position: fixed;
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      color: #fff;
       top: 20px;
       right: 30px;
-      width: fit-content;
+      width: 150px;
     }
   }
   

@@ -1,0 +1,39 @@
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 18px;
+  
+    &__slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  
+      &:before {
+        position: absolute;
+        content: '';
+        height: 14px;
+        width: 14px;
+        left: 2px;
+        bottom: 2px;
+        background-color: white;
+        border-radius: 50%;
+        transition: transform 0.3s;
+      }
+    }
+  
+    input[type='checkbox']:checked + &__slider {
+      background-color: #121f3c;
+  
+      &:before {
+        transform: translateX(32px);
+      }
+    }
+  }
+  

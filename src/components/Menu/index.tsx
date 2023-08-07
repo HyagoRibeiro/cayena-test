@@ -2,16 +2,12 @@ import React from "react";
 import "./Menu.scss";
 import { Link } from "react-router-dom";
 import { useTheme } from "../../context/ThemeContext";
+import Switch from "../ToggleButton";
 
 const Menu: React.FC = () => {
   const { toggleTheme, theme } = useTheme();
 
-  const themeToChange = theme === "dark" ? "Light" : "Dark";
-
-  const handleDarkModeToggle = () => {
-    toggleTheme();
-  };
-
+  const isDark = theme === 'dark'
   const handleLogoff = () => {
     localStorage.removeItem("tokenCayena");
   };
@@ -20,8 +16,10 @@ const Menu: React.FC = () => {
     <div className="menu">
       <div className="logo">Logo</div>
       <div className="menu__items">
-        <div className="menu__items__link" onClick={handleDarkModeToggle}>
-          {themeToChange}
+        <div className="menu__items__link">
+          <span>Light</span>
+          <Switch onChange={toggleTheme} checked={isDark} />
+          <span>Dark</span>
         </div>
         <Link to="/" className="menu__items__link" onClick={handleLogoff}>
           Logout

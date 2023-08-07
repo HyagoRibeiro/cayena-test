@@ -6,6 +6,7 @@ import { useTheme } from "../../context/ThemeContext";
 import GenericInput from "../GenericInput";
 import Button from "../Button";
 import { authentication } from "../../services/api";
+import Switch from "../ToggleButton";
 
 function LoginPage() {
   const { toggleTheme, theme } = useTheme();
@@ -14,7 +15,7 @@ function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const themeToChange = theme === "dark" ? "Light" : "Dark";
+  const isDark = theme === 'dark'
 
   const handleLogin = async () => {
     const grantType = "password";
@@ -44,7 +45,11 @@ function LoginPage() {
 
   return (
     <div className="container">
-      <Button onClick={toggleTheme}>{themeToChange}</Button>
+      <div className="container-switch-login">
+      <span>Light</span>
+          <Switch onChange={toggleTheme} checked={isDark} />
+          <span>Dark</span>
+      </div>
       <div className="login">
         <h1>Login Page</h1>
         <GenericInput
