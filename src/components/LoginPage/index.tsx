@@ -44,7 +44,7 @@ function LoginPage() {
 
   return (
     <div className="container">
-      <Button text={themeToChange} onClick={toggleTheme} />
+      <Button onClick={toggleTheme}>{themeToChange}</Button>
       <div className="login">
         <h1>Login Page</h1>
         <GenericInput
@@ -59,7 +59,7 @@ function LoginPage() {
           onChange={handlePasswordChange}
           placeholder="Password"
         />
-        <Button text="Login" onClick={handleLogin} />
+        <Button onClick={handleLogin}>Login</Button>
       </div>
     </div>
   );

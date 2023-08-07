@@ -6,8 +6,12 @@
   margin: 0 auto;
 
   .btn-back {
+    all:unset;
     cursor: pointer;
     width: fit-content;
+    background:none;
+    border: none;
+
   }
 
   .supplier-detail__header {

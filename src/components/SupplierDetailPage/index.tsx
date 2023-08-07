@@ -1,5 +1,4 @@
 import React, { useEffect, useState, ChangeEvent, FormEvent } from "react";
-import { useTheme } from "../../context/ThemeContext";
 import Button from "../Button";
 import GenericInput from "../GenericInput";
 import { useNavigate, useParams } from "react-router-dom";
@@ -26,7 +25,6 @@ function SupplierDetailPage() {
     state: "",
     zipCode: "",
   });
-  const { theme } = useTheme();
 
   const getSuppliers = async (supplierId: string) => {
     const { data } = await api.get(`/suppliers/${supplierId}`);
@@ -80,14 +78,14 @@ function SupplierDetailPage() {
   return (
     <>
       <Menu />
-      <div className={`supplier-detail ${theme}-theme`}>
-        <div onClick={backToList()} className="btn-back">
+      <div className={`supplier-detail`}>
+        <button onClick={backToList()} className="btn-back">
           {"< Voltar"}
-        </div>
-        <form className={`form ${theme}-theme`} onSubmit={handleSubmit}>
+        </button>
+        <form className={"form"} onSubmit={handleSubmit}>
           <div className="supplier-detail__header">
             <h1>Supplier Details</h1>
-            <Button type="submit" text="Submit" />
+            <Button type="submit">Submit</Button>
           </div>
           <div className="form__block">
             <div className="form__field">

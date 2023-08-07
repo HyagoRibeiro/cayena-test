@@ -48,7 +48,7 @@ const Table: React.FC<TableProps> = ({ columns, data, onRowClick, loading }) => 
             {columns.map((column) => (
               <td key={column.accessor}>
                 {column.isActionColumn ? (
-                    <Button text='Editar' onClick={handleRowClick(row)} />
+                    <Button onClick={handleRowClick(row)}>Edit</Button>
                 ) : (
                     row[column.accessor]
                 )}
