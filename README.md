@@ -14,6 +14,12 @@ Projeto composto por 3 telas, login, listagem, edição.
 - Sass
 
 ## Melhorias futuras
-- Implementação de BFF para manter segura a secret key do usuário
-- Testes de integração para validar as telas
-- Implementação de feedbacks visuais das requests
+- Implementação de BFF para manter segura a secret key do usuário.
+- Testes de integração para validar as telas.
+- Implementação de feedbacks visuais das requests.
+- Implementação da funcionalidade de criar novo supplier.
+- Implementação da funcionalidade de deleter supplier.
+- Tabela e request de listagem com paginação.
+
+## Impedimentos
+- Rota de PUT para alteração do cadastro de supplier está com CORS que não permite a execução.
