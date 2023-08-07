@@ -13,3 +13,7 @@ Projeto composto por 3 telas, login, listagem, edição.
 - Jest
 - Sass
 
+## Melhorias futuras
+- Implementação de BFF para manter segura a secret key do usuário
+- Testes de integração para validar as telas
+- Implementação de feedbacks visuais das requests
