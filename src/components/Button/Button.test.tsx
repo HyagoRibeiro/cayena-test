@@ -1,23 +1,22 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import Button from './index';
 
 describe('Button', () => {
+  const { getByText } = render(<Button>Click</Button>);
+
   it('renders button correctly with given text', () => {
-    const buttonText = 'Click';
 
-    render(<Button text={buttonText} />);
-
-    const buttonElement = screen.getByText(buttonText);
+    const buttonElement = getByText('Click');
     expect(buttonElement).toBeInTheDocument();
   });
 
   it('calls onClick handler when button is clicked', () => {
     const onClickMock = jest.fn();
 
-    render(<Button text="Click" onClick={onClickMock} />);
+    render(<Button onClick={onClickMock}>Click</Button>);
 
-    const buttonElement = screen.getByText('Click');
+    const buttonElement = getByText('Click');
     fireEvent.click(buttonElement);
 
     expect(onClickMock).toHaveBeenCalled();

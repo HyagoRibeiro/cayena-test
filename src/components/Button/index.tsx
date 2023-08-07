@@ -1,13 +1,13 @@
 import React from 'react';
 
 interface ButtonProps extends React.InputHTMLAttributes<HTMLButtonElement> {
-  text: string;
+  children: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ text, onClick }) => {
+const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
   return (
     <button className="button" onClick={onClick}>
-      {text}
+      {children}
     </button>
   );
 };
