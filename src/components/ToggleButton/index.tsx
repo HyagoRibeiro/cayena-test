@@ -17,7 +17,7 @@ const Switch: React.FC<SwitchProps> = ({ onChange, checked }) => {
   return (
     <label className="switch">
       <input data-testid="switch" type="checkbox" checked={isChecked} onChange={handleChange} />
-      <span className="switch__slider"></span>
+      <span className="switch__slider" />
     </label>
   );
 };
