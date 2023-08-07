@@ -1,4 +1,5 @@
-![image](https://github.com/HyagoRibeiro/cayena-test/assets/65515366/8471922b-90f1-4a66-8e6b-d8c54e89090d)
+![image](https://github.com/HyagoRibeiro/cayena-test/assets/65515366/b8c6a89a-4d1d-4261-81e2-6af327c31f6e)
+
 
 # Test frontend Cayena
 
