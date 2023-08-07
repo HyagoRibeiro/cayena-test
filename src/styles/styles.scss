@@ -1,0 +1,75 @@
+@import '../components/LoginPage/LoginPage.scss';
+@import '../components/SupplierDetailPage/SupplierDetailPage.scss';
+@import '../components/GenericInput/GenericInput.scss';
+@import '../components/Button/Button.scss';
+@import '../components/Menu/Menu.scss';
+@import '../components/ListSuppliersPage/ListSupplierPage.scss';
+@import '../components/TableSkeleton/TableSkeleton.scss';
+@import '../components/Table/Table.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Urbanist', sans-serif;
+}
+
+.dark-theme {
+    background-color: #000;
+    color: #fff;
+
+    .container {
+        background-color: #000;
+
+        .login {
+            background-color: #121f3c;
+        }
+      }
+
+    .button {
+        color: #e9485f;
+        font-weight: 700;
+        background-color: #fff;
+        cursor: pointer;
+      
+        &:hover {
+          background-color: darken(#fff, 10%);
+        }
+      
+        &:focus {
+          outline: none;
+          box-shadow: 0 0 5px rgba(#fff, 0.5);
+        }
+      }
+
+      .table {
+        color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+      
+        th {
+          background-color: #e9485f;
+          color: #fff;
+        }
+    
+        td {
+          border-top: 1px solid #ccc;
+        }
+        
+        tr:last-child td {
+          border-bottom: 1px solid #ccc;
+        }
+      
+        tr:hover {
+            background-color: darken(#ccc, 10%);
+          cursor: pointer;
+        }
+      }
+
+      .table-skeleton__row {
+        opacity: 0.3;
+      }
+}

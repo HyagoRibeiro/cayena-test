@@ -1,0 +1,15 @@
+.generic-input {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+  
+    &:focus {
+      outline: none;
+      border-color: #121f3c;
+      box-shadow: 0 0 5px #121f3c;
+    }
+  }

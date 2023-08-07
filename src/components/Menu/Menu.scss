@@ -1,0 +1,28 @@
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e9485f;
+  padding: 10px;
+  color: white;
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+  }
+
+  .menu__items {
+    display: flex;
+
+    a {
+      text-decoration: none;
+      color: #fff;
+
+      &:hover {
+        color: darken(#fff, 10%);
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -1,0 +1,124 @@
+.supplier-detail {
+  background-color: #fff;
+  padding: 2rem;
+  margin: 1rem 2rem;
+  max-width: 1024px;
+  margin: 0 auto;
+
+  .btn-back {
+    cursor: pointer;
+    width: fit-content;
+  }
+
+  .supplier-detail__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .button {
+      width: 10rem;
+      height: 3rem;
+    }
+  }
+
+  .form__block {
+    display: grid;
+    column-gap: 3rem;
+    row-gap: 1rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+    grid-template-columns: 1fr 1fr;
+
+    h2 {
+      margin: 0;
+      padding: 0;
+      grid-column: span 2;
+      line-height: 1;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+      padding-top: 5rem;
+
+      h2 {
+        grid-column: span 3;
+      }
+    }
+  }
+
+  .form__block--address {
+    display: grid;
+    column-gap: 3rem;
+    row-gap: 1rem;
+
+    h2 {
+      margin: 0;
+      padding: 0;
+    }
+
+    @media screen and (min-width: 1024px) {
+      grid-template-areas: "header header header header header"
+                           "address address address number complement"
+                           "neighborhood city city state zipCode";
+
+      h2 {
+        grid-area: header;
+      }
+
+      .form__field {
+        &:nth-of-type(1) {
+          grid-area: address;
+        }
+        &:nth-of-type(2) {
+          grid-area: number;
+        }
+        &:nth-of-type(3) {
+          grid-area: complement;
+        }
+        &:nth-of-type(4) {
+          grid-area: neighborhood;
+        }
+        &:nth-of-type(5) {
+          grid-area: city;
+        }
+        &:nth-of-type(6) {
+          grid-area: state;
+        }
+        &:nth-of-type(7) {
+          grid-area: zipCode;
+        }
+      }
+    }
+  }
+
+  .form__field {
+    display: grid;
+    gap: 4px;
+
+    label {
+      font-weight: bold;
+    }
+
+    input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 100%;
+    }
+  }
+
+  .button {
+    grid-column: span 3;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding-top: 5rem;
+  }
+}
