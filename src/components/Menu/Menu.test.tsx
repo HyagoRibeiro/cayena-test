@@ -1,44 +1,44 @@
-import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
-import Menu from './index';
-import ThemeContextProvider from '../../context/ThemeContext';
-import { BrowserRouter as Router } from 'react-router-dom';
+import React from "react";
+import { render, fireEvent } from "@testing-library/react";
+import Menu from "./index";
+import ThemeContextProvider from "../../context/ThemeContext";
+import { BrowserRouter as Router } from "react-router-dom";
 
-describe('Menu', () => {
-    beforeEach(() => {
-        const mockRemoveItem = jest.fn();
-        Object.defineProperty(window, 'localStorage', {
-          value: {
-            removeItem: mockRemoveItem,
-          },
-        });
-      });
+describe("Menu", () => {
+  beforeEach(() => {
+    const mockRemoveItem = jest.fn();
+    Object.defineProperty(window, "localStorage", {
+      value: {
+        removeItem: mockRemoveItem,
+      },
+    });
+  });
 
-      afterEach(() => {
-        jest.restoreAllMocks();
-      });
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
 
-  it('toggles dark mode correctly', () => {
-    render(
-      <ThemeContextProvider>
-        <Router>
-          <Menu />
-        </Router>
-      </ThemeContextProvider>
-    );
+  const { getByText } = render(
+    <ThemeContextProvider>
+      <Router>
+        <Menu />
+      </Router>
+    </ThemeContextProvider>
+  );
 
-    const initialThemeElement = screen.getByText('Dark');
+  it("toggles dark mode correctly", () => {
+    const initialThemeElement = getByText("Dark");
     expect(initialThemeElement).toBeInTheDocument();
 
-    const toggleThemeButton = screen.getByText('Dark');
+    const toggleThemeButton = getByText("Dark");
     fireEvent.click(toggleThemeButton);
 
-    const updatedThemeElement = screen.getByText('Light');
+    const updatedThemeElement = getByText("Light");
     expect(updatedThemeElement).toBeInTheDocument();
   });
 
-  it('removes token from localStorage on logoff', () => {
-    const removeItemMock = jest.spyOn(localStorage, 'removeItem');
+  it("removes token from localStorage on logoff", () => {
+    const removeItemMock = jest.spyOn(localStorage, "removeItem");
 
     render(
       <ThemeContextProvider>
@@ -48,9 +48,9 @@ describe('Menu', () => {
       </ThemeContextProvider>
     );
 
-    const logoffLink = screen.getByText('Logoff');
+    const logoffLink = getByText("Logoff");
     fireEvent.click(logoffLink);
 
-    expect(removeItemMock).toHaveBeenCalledWith('tokenCayena');
+    expect(removeItemMock).toHaveBeenCalledWith("tokenCayena");
   });
 });
