@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Table, { TableRow } from "../Table";
-import Menu from "../Menu";
+import Table, { TableRow } from "../../components/Table";
+import Menu from "../../components/Menu";
 import suppliersService from "../../services/suppliersService";
 
 function ListSuppliersPage() {

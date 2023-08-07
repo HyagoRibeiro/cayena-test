@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 
 import { useTheme } from "../../context/ThemeContext";
 
-import GenericInput from "../GenericInput";
-import Button from "../Button";
+import GenericInput from "../../components/GenericInput";
+import Button from "../../components/Button";
 import { authentication } from "../../services/api";
-import Switch from "../ToggleButton";
+import Switch from "../../components/ToggleButton";
 
 function LoginPage() {
   const { toggleTheme, theme } = useTheme();

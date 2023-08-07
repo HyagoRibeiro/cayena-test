@@ -1,9 +1,9 @@
 import React, { useEffect, useState, ChangeEvent, FormEvent } from "react";
-import Button from "../Button";
-import GenericInput from "../GenericInput";
+import Button from "../../components/Button";
+import GenericInput from "../../components/GenericInput";
 import { useNavigate, useParams } from "react-router-dom";
 import { api } from "../../services/api";
-import Menu from "../Menu";
+import Menu from "../../components/Menu";
 import suppliersService from "../../services/suppliersService";
 
 function SupplierDetailPage() {
