@@ -15,6 +15,10 @@
   .menu__items {
     display: flex;
 
+    .menu__items__link:first-child {
+      margin-right: 20px;
+    }
+
     a {
       text-decoration: none;
       color: #fff;

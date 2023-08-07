@@ -24,7 +24,7 @@ const Menu: React.FC = () => {
           {themeToChange}
         </div>
         <Link to="/" className="menu__items__link" onClick={handleLogoff}>
-          Logoff
+          Logout
         </Link>
       </div>
     </div>
